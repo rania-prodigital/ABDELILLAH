@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pour Abdelillah 💖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pink: #ff006e;
+            --purple: #8338ec;
+            --blue: #3a86ff;
+            --gold: #ffd60a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            color: white;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        /* Curseur personnalisé en forme de coeur */
+        .cursor {
+            width: 30px;
+            height: 30px;
+            position: fixed;
+            pointer-events: none;
+            z-index: 10000;
+            font-size: 24px;
+            transform: translate(-50%, -50%);
+            animation: heartbeat 1s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.2); }
+        }
+
+        /* Étoiles de fond */
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Container principal */
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Page d'accueil avec révélation */
+        .welcome-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            animation: fadeOut 1s forwards 5s;
+        }
+
+        .welcome-screen h1 {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            animation: slideDown 1s ease-out;
+        }
+
+        .welcome-screen p {
+            font-size: 2rem;
+            animation: slideUp 1s ease-out 0.5s backwards;
+        }
+
+        .welcome-screen .btn {
+            margin-top: 3rem;
+            padding: 1.5rem 3rem;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            border: none;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            animation: slideUp 1s ease-out 1s backwards;
+            box-shadow: 0 10px 40px rgba(255, 0, 110, 0.5);
+            transition: all 0.3s;
+        }
+
+        .welcome-screen .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 50px rgba(255, 0, 110, 0.8);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        /* Section Hero */
+        .hero {
+            text-align: center;
+            padding: 5rem 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 6rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+            to { text-shadow: 0 0 40px rgba(255, 0, 110, 0.8), 0 0 60px rgba(255, 0, 110, 0.6); }
+        }
+
+        .typewriter {
+            font-size: 2.5rem;
+            border-right: 3px solid var(--pink);
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 3s steps(40) forwards, blink 0.75s step-end infinite;
+            margin: 2rem auto;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        /* Compteur de jours */
+        .counter-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 4rem;
+            border-radius: 30px;
+            margin: 5rem 0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .counter {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .counter-item {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 0, 110, 0.3), rgba(131, 56, 236, 0.3));
+            padding: 2rem;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .counter-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 0, 110, 0.5);
+        }
+
+        .counter-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: var(--gold);
+        }
+
+        .counter-label {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        /* Raisons de t'aimer */
+        .reasons-section {
+            margin: 5rem 0;
+        }
+
+        .reasons-section h2 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .reason-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.5s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reason-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .reason-card:hover::before {
+            left: 100%;
+        }
+
+        .reason-card:hover {
+            transform: scale(1.05) rotateY(5deg);
+            box-shadow: 0 20px 50px rgba(255, 0, 110, 0.5);
+        }
+
+        .reason-number {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .reason-text {
+            font-size: 1.3rem;
+            line-height: 1.6;
+        }
+
+        /* Galerie de souvenirs */
+        .gallery-section {
+            margin: 5rem 0;
+            text-align: center;
+        }
+
+        .gallery-section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            perspective: 1000px;
+        }
+
+        .gallery-item {
+            height: 300px;
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            transition: all 0.5s;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-item::before {
+            content: attr(data-memory);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem;
+            font-size: 1.2rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover::before {
+            transform: translateY(0);
+        }
+
+        .gallery-item:hover {
+            transform: rotateY(180deg) scale(1.1);
+        }
+
+        /* Message d'amour animé */
+        .love-letter {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(15px);
+            padding: 4rem;
+            border-radius: 30px;
+            margin: 5rem auto;
+            max-width: 800px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        .love-letter::before {
+            content: '💌';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 4rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-20px); }
+        }
+
+        .love-letter h3 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .love-letter p {
+            font-size: 1.4rem;
+            line-height: 2;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Bouton surprise */
+        .surprise-button {
+            display: block;
+            margin: 5rem auto;
+            padding: 2rem 5rem;
+            font-size: 2rem;
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+            border: none;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 15px 50px rgba(255, 0, 110, 0.5);
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .surprise-button:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 20px 60px rgba(255, 0, 110, 0.8);
+        }
+
+        /* Modal de surprise */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            padding: 4rem;
+            border-radius: 30px;
+            text-align: center;
+            max-width: 600px;
+            animation: modalAppear 0.5s ease-out;
+        }
+
+        @keyframes modalAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .modal-content h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .modal-content p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .close-modal {
+            margin-top: 2rem;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            background: white;
+            color: var(--purple);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Cœurs qui tombent */
+        .falling-heart {
+            position: fixed;
+            font-size: 30px;
+            animation: fall 5s linear forwards;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            font-size: 1.5rem;
+            margin-top: 5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .typewriter {
+                font-size: 1.5rem;
+            }
+
+            .counter {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Curseur coeur -->
+    <div class="cursor">💖</div>
+
+    <!-- Étoiles -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Écran de bienvenue -->
+    <div class="welcome-screen" id="welcomeScreen">
+        <h1>✨ Pour Abdelillah ✨</h1>
+        <p>Quelque chose de spécial t'attend...</p>
+        <button class="btn" onclick="startExperience()">💖 Découvrir 💖</button>
+    </div>
+
+    <div class="container">
+        <!-- Section Hero -->
+        <section class="hero">
+            <h1>💕 Abdelillah 💕</h1>
+            <div class="typewriter" id="typewriter"></div>
+            <p style="font-size: 2rem; margin-top: 2rem;">Tu es la personne la plus incroyable au monde</p>
+        </section>
+
+        <!-- Compteur de temps ensemble -->
+        <section class="counter-section">
+            <h2 style="text-align: center; font-size: 3rem; margin-bottom: 2rem;">⏰ Notre Histoire ⏰</h2>
+            <div class="counter">
+                <div class="counter-item">
+                    <div class="counter-number" id="days">0</div>
+                    <div class="counter-label">Jours</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" id="hours">0</div>
+                    <div class="counter-label">Heures</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" id="minutes">0</div>
+                    <div class="counter-label">Minutes</div>
+                </div>
+                <div class="counter-item">
+                    <div class="counter-number" id="seconds">0</div>
+                    <div class="counter-label">Secondes</div>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 1.5rem; margin-top: 2rem;">
+                Depuis que tu es entré dans ma vie 💖
+            </p>
+        </section>
+
+        <!-- Raisons de t'aimer -->
+        <section class="reasons-section">
+            <h2>💝 Pourquoi Je T'Aime 💝</h2>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <div class="reason-number">1️⃣</div>
+                    <div class="reason-text">Ton sourire illumine ma journée comme le soleil illumine le monde ☀️</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">2️⃣</div>
+                    <div class="reason-text">Tu me fais rire même dans les moments les plus difficiles 😄</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">3️⃣</div>
+                    <div class="reason-text">Ta gentillesse et ton cœur généreux me touchent chaque jour 💗</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">4️⃣</div>
+                    <div class="reason-text">Tu me comprends comme personne d'autre ne le fait 🤝</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">5️⃣</div>
+                    <div class="reason-text">Avec toi, je me sens complète et heureuse 🌟</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">6️⃣</div>
+                    <div class="reason-text">Tu es mon meilleur ami et mon plus grand amour 💑</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">7️⃣</div>
+                    <div class="reason-text">Chaque moment avec toi est un cadeau précieux 🎁</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">8️⃣</div>
+                    <div class="reason-text">Tu es l'homme de mes rêves devenu réalité ✨</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">9️⃣</div>
+                    <div class="reason-text">Ta présence me donne la force d'affronter n'importe quoi 💪</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">🔟</div>
+                    <div class="reason-text">Je t'aime simplement parce que tu es TOI, unique et parfait 💖</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galerie de souvenirs -->
+        <section class="gallery-section">
+            <h2>📸 Nos Souvenirs 📸</h2>
+            <div class="gallery">
+                <div class="gallery-item" data-memory="Notre premier rendez-vous">💑</div>
+                <div class="gallery-item" data-memory="Nos fous rires ensemble">😂</div>
+                <div class="gallery-item" data-memory="Nos soirées films">🎬</div>
+                <div class="gallery-item" data-memory="Nos balades romantiques">🌹</div>
+                <div class="gallery-item" data-memory="Nos discussions jusqu'au matin">🌙</div>
+                <div class="gallery-item" data-memory="Chaque instant avec toi">⭐</div>
+            </div>
+        </section>
+
+        <!-- Lettre d'amour -->
+        <div class="love-letter">
+            <h3>Mon Amour Abdelillah,</h3>
+            <p>
+                Chaque jour passé avec toi est une bénédiction. Tu es ma joie, mon bonheur, ma raison de sourire.
+            </p>
+            <p>
+                Quand je suis avec toi, le monde devient magique. Tu transformes les moments ordinaires en souvenirs extraordinaires.
+            </p>
+            <p>
+                Merci d'être l'homme merveilleux que tu es. Merci de m'aimer comme tu le fais.
+            </p>
+            <p>
+                Je t'aime plus que les mots ne pourront jamais l'exprimer. Tu es mon tout. 💖
+            </p>
+            <p style="margin-top: 2rem; font-size: 1.8rem; color: var(--gold);">
+                Je t'aime pour toujours et à jamais ∞
+            </p>
+        </div>
+
+        <!-- Bouton surprise -->
+        <button class="surprise-button" onclick="showSurprise()">
+            🎁 CLIQUE ICI POUR UNE SURPRISE ! 🎁
+        </button>
+    </div>
+
+    <!-- Modal de surprise -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2>💖 JE T'AIME ABDELILLAH ! 💖</h2>
+            <p>Tu es l'amour de ma vie !</p>
+            <p>Mon cœur t'appartient pour toujours !</p>
+            <p>Je suis la personne la plus chanceuse du monde de t'avoir !</p>
+            <p style="font-size: 3rem; margin: 2rem 0;">💕💕💕</p>
+            <button class="close-modal" onclick="closeModal()">💖 Merci mon amour 💖</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Fait avec tout mon amour pour Abdelillah 💖</p>
+        <p>Tu es mon univers entier 🌌</p>
+    </footer>
+
+    <script>
+        // Générer les étoiles
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // Curseur personnalisé
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Cœurs qui tombent au clic
+        document.addEventListener('click', (e) => {
+            const heart = document.createElement('div');
+            heart.className = 'falling-heart';
+            heart.textContent = '💖';
+            heart.style.left = e.clientX + 'px';
+            heart.style.top = e.clientY + 'px';
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 5000);
+
+            // Son de clic
+            playSound(800, 0.1);
+        });
+
+        // Fonction pour commencer l'expérience
+        function startExperience() {
+            playSound(1000, 0.2);
+            document.getElementById('welcomeScreen').style.display = 'none';
+            createFireworks();
+            startTypewriter();
+        }
+
+        // Machine à écrire
+        const messages = [
+            "Tu es mon soleil ☀️",
+            "Tu es ma lune 🌙",
+            "Tu es mon étoile ⭐",
+            "Tu es mon tout 💖"
+        ];
+        let messageIndex = 0;
+
+        function startTypewriter() {
+            const element = document.getElementById('typewriter');
+            let charIndex = 0;
+            const message = messages[messageIndex];
+
+            element.style.width = '0';
+            element.textContent = '';
+
+            const interval = setInterval(() => {
+                if (charIndex < message.length) {
+                    element.textContent += message[charIndex];
+                    charIndex++;
+                } else {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        messageIndex = (messageIndex + 1) % messages.length;
+                        startTypewriter();
+                    }, 3000);
+                }
+            }, 100);
+        }
+        }
+
+        // Compteur de temps
+        const startDate = new Date('2025-02-15'); // Votre belle histoire a commencé le 15 février 2025 💖
+        
+        function updateCounter() {
+            const now = new Date();
+            const diff = now - startDate;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        setInterval(updateCounter, 1000);
+        updateCounter();
+
+        // Modal surprise
+        function showSurprise() {
+            document.getElementById('modal').style.display = 'flex';
+            createMassiveFireworks();
+            playMelody([523, 659, 784, 1047], 0.2);
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+            playSound(800, 0.1);
+        }
+
+        // Feux d'artifice
+        function createFireworks() {
+            const colors = ['#ff006e', '#8338ec', '#3a86ff', '#ffd60a', '#ff006e'];
+            
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.style.position = 'fixed';
+                    firework.style.width = '4px';
+                    firework.style.height = '4px';
+                    firework.style.borderRadius = '50%';
+                    firework.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    firework.style.zIndex = '9999';
+                    
+                    const startX = Math.random() * window.innerWidth;
+                    const startY = Math.random() * window.innerHeight;
+                    firework.style.left = startX + 'px';
+                    firework.style.top = startY + 'px';
+                    
+                    document.body.appendChild(firework);
+                    
+                    const angle = Math.random() * Math.PI * 2;
+                    const velocity = Math.random() * 200 + 100;
+                    const endX = startX + Math.cos(angle) * velocity;
+                    const endY = startY + Math.sin(angle) * velocity;
+                    
+                    firework.animate([
+                        { left: startX + 'px', top: startY + 'px', opacity: 1 },
+                        { left: endX + 'px', top: endY + 'px', opacity: 0 }
+                    ], {
+                        duration: 1500,
+                        easing: 'ease-out'
+                    });
+                    
+                    setTimeout(() => firework.remove(), 1500);
+                }, i * 20);
+            }
+        }
+
+        function createMassiveFireworks() {
+            for (let j = 0; j < 5; j++) {
+                setTimeout(() => createFireworks(), j * 300);
+            }
+        }
+
+        // Sons
+        function playSound(frequency, duration) {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.value = frequency;
+            oscillator.type = 'sine';
+            
+            gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + duration);
+        }
+
+        function playMelody(frequencies, duration) {
+            frequencies.forEach((freq, index) => {
+                setTimeout(() => playSound(freq, duration), index * duration * 1000);
+            });
+        }
+
+        // Animations sur les cartes
+        document.querySelectorAll('.reason-card, .gallery-item').forEach(card => {
+            card.addEventListener('click', () => {
+                playSound(1000, 0.1);
+            });
+        });
+
+        // Message dans la console
+        console.log('%c💖 JE T\'AIME ABDELILLAH ! 💖', 'font-size: 40px; font-weight: bold; color: #ff006e;');
+        console.log('%cTu es la meilleure chose qui me soit arrivée !', 'font-size: 20px; color: #8338ec;');
+    </script>
+</body>
+</html>
