@@ -262,7 +262,7 @@
         .reason-card {
             background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08));
             backdrop-filter: blur(15px);
-            padding: 2.5rem;
+            padding: 3rem 2.5rem;
             border-radius: 25px;
             border: 2px solid rgba(255, 255, 255, 0.3);
             transition: all 0.5s;
@@ -270,6 +270,10 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .reason-card::before {
@@ -299,62 +303,9 @@
         }
 
         .reason-text {
-            font-size: 1.3rem;
-            line-height: 1.6;
-        }
-
-        /* Galerie de souvenirs */
-        .gallery-section {
-            margin: 5rem 0;
-            text-align: center;
-        }
-
-        .gallery-section h2 {
-            font-size: 3.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            perspective: 1000px;
-        }
-
-        .gallery-item {
-            height: 300px;
-            background: linear-gradient(135deg, var(--pink), var(--purple));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            transition: all 0.5s;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .gallery-item::before {
-            content: attr(data-memory);
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 1rem;
-            font-size: 1.2rem;
-            transform: translateY(100%);
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover::before {
-            transform: translateY(0);
-        }
-
-        .gallery-item:hover {
-            transform: rotateY(180deg) scale(1.1);
+            font-size: 1.4rem;
+            line-height: 1.8;
+            word-wrap: break-word;
         }
 
         /* Message d'amour animé */
@@ -547,7 +498,8 @@
             }
 
             .reason-card {
-                padding: 2rem;
+                padding: 2.5rem 2rem;
+                min-height: 200px;
             }
 
             .reason-number {
@@ -555,7 +507,8 @@
             }
 
             .reason-text {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
+                line-height: 1.7;
             }
 
             .gallery {
@@ -625,8 +578,7 @@
                 font-size: 2rem;
             }
 
-            .reasons-section h2,
-            .gallery-section h2 {
+            .reasons-section h2 {
                 font-size: 2.5rem;
             }
 
@@ -662,7 +614,8 @@
             }
 
             .reason-card {
-                padding: 1.5rem;
+                padding: 2rem 1.5rem;
+                min-height: 180px;
             }
 
             .reason-number {
@@ -670,7 +623,8 @@
             }
 
             .reason-text {
-                font-size: 1rem;
+                font-size: 1.1rem;
+                line-height: 1.6;
             }
 
             .gallery-item {
@@ -730,8 +684,7 @@
                 font-size: 1.5rem;
             }
 
-            .reasons-section h2,
-            .gallery-section h2 {
+            .reasons-section h2 {
                 font-size: 2rem;
             }
         }
@@ -791,38 +744,44 @@
             <div class="reasons-grid">
                 <div class="reason-card">
                     <div class="reason-number">1️⃣</div>
-                  /div> Omreyyy nta klch fi hyati nhari yfot mal ki mtkonch fih mais ghir mnchouf lmsj t3k nfrh denya endy thbs g3e, nta howa she endy nhbek bzf💕☀️</div>
+                    <div class="reason-text">Ton sourire illumine ma journée comme le soleil illumine le monde ☀️</div>
                 </div>
                 <div class="reason-card">
                     <div class="reason-number">2️⃣</div>
-                    <div class="reason-text">Abdelillah wlh nta bnadem 3ziz eliya bzf w9rib liya hta mn waldiya, wlh n3che9 fik mknch li ystahl lhob 9dk j'espère tjrs nkono kifkif , merci beaucoup ela kl hja drtha ela jali nmout elik 💖</div>
+                    <div class="reason-text">Tu me fais rire même dans les moments les plus difficiles 😄</div>
                 </div>
                 <div class="reason-card">
                     <div class="reason-number">3️⃣</div>
-                    <div class="reason-text">Hobbi ki tfr7 nfr7 ana tan wki tkn cv pas hta ana nkon mchy mliha, malgré denya fiha swalh chabine wswalh 3yanin mais ghdy nsyi de ma part nkon mra li mtndmch li rak m3aha , smhli ela aye ghlta ghltha m3ak nw3dk mrhch tt3wd aye haja z3ftk mni, jtm ma vie reby y5lik liya💗</div>
+                    <div class="reason-text">Ta gentillesse et ton cœur généreux me touchent chaque jour 💗</div>
                 </div>
                 <div class="reason-card">
                     <div class="reason-number">4️⃣</div>
-                    <div class="reason-text">Ma vie elblk bli nta unique n9lhalk wn3awdlk chuis tellement contente par ce que endy nta , nchlh nb9a t3k wtb9a t3y à la mort 💕💕💕.</div>
+                    <div class="reason-text">Tu me comprends comme personne d'autre ne le fait 🤝</div>
                 </div>
                 <div class="reason-card">
                     <div class="reason-number">5️⃣</div>
-                    <div class="reason-text">
-Min cœur, c pas que des paroles mais wlh ma vie nhbek dymn nkon m3ak wlh jmen sens vrmnt  bien avec toi wntmnlk tjrs tkon bien wtwsl win rak hab wtfrh hta ana nfrhlk mv, wlh pour moi ni3ma thbi wahd wyhbk hamdoulhh ki reby b3tk liya💕💖.</div>
+                    <div class="reason-text">Avec toi, je me sens complète et heureuse 🌟</div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Galerie de souvenirs -->
-        <section class="gallery-section">
-            <h2>📸 Nos Souvenirs 📸</h2>
-            <div class="gallery">
-                <div class="gallery-item" data-memory="Notre premier rendez-vous">💑</div>
-                <div class="gallery-item" data-memory="Nos fous rires ensemble">😂</div>
-                <div class="gallery-item" data-memory="Nos soirées films">🎬</div>
-                <div class="gallery-item" data-memory="Nos balades romantiques">🌹</div>
-                <div class="gallery-item" data-memory="Nos discussions jusqu'au matin">🌙</div>
-                <div class="gallery-item" data-memory="Chaque instant avec toi">⭐</div>
+                <div class="reason-card">
+                    <div class="reason-number">6️⃣</div>
+                    <div class="reason-text">Tu es mon meilleur ami et mon plus grand amour 💑</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">7️⃣</div>
+                    <div class="reason-text">Chaque moment avec toi est un cadeau précieux 🎁</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">8️⃣</div>
+                    <div class="reason-text">Tu es l'homme de mes rêves devenu réalité ✨</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">9️⃣</div>
+                    <div class="reason-text">Ta présence me donne la force d'affronter n'importe quoi 💪</div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-number">🔟</div>
+                    <div class="reason-text">Je t'aime simplement parce que tu es TOI, unique et parfait 💖</div>
+                </div>
             </div>
         </section>
 
@@ -1046,7 +1005,7 @@ Min cœur, c pas que des paroles mais wlh ma vie nhbek dymn nkon m3ak wlh jmen s
         }
 
         // Animations sur les cartes
-        document.querySelectorAll('.reason-card, .gallery-item').forEach(card => {
+        document.querySelectorAll('.reason-card').forEach(card => {
             card.addEventListener('click', () => {
                 playSound(1000, 0.1);
             });
